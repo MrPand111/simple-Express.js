@@ -1,7 +1,7 @@
 /*
  * @LastEditors: panda_liu
- * @LastEditTime: 2020-09-02 12:52:10
- * @FilePath: \myexpress\myexpress\index.js
+ * @LastEditTime: 2020-09-02 19:06:35
+ * @FilePath: \myexpress\index.js
  * @Description: add some description
  */
 const http = require('http');
@@ -69,6 +69,10 @@ class App {
         this.router.routes.push(createLayer(method, path, fn));
       }
     })
+  }
+
+  all(path, fn) {
+    this.router.routes.push(createLayer('all', path, fn));
   }
 
   // 挂载方法
